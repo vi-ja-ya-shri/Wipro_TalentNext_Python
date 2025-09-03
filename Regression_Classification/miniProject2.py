@@ -1,5 +1,4 @@
 # Diabetes Prediction using PIMA Indians Dataset
-# ==========================================================
 
 import numpy as np
 import pandas as pd
