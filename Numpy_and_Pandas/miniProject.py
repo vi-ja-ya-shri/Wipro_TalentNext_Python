@@ -16,8 +16,8 @@ print("\nNumeric Columns:", numeric_cols)
 # --- Detect Outliers using IQR ---
 outliers = {}
 for col in numeric_cols:
-    Q1 = np.percentile(df[col].dropna(), 25)  # 25th percentile
-    Q3 = np.percentile(df[col].dropna(), 75)  # 75th percentile
+    Q1 = np.percentile(df[col].dropna(), 25)  
+    Q3 = np.percentile(df[col].dropna(), 75) 
     IQR = Q3 - Q1
     lower_bound = Q1 - 1.5 * IQR
     upper_bound = Q3 + 1.5 * IQR
@@ -25,7 +25,7 @@ for col in numeric_cols:
     mask = (df[col] < lower_bound) | (df[col] > upper_bound)
     outliers[col] = df.loc[mask, col]
 
-# Print results
+
 for col, values in outliers.items():
     if not values.empty:
         print(f"\n Outliers in {col}:")
